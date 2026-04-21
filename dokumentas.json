@@ -1,0 +1,53 @@
+{
+  "api_name": "API BEM FASILKOM UNSRI",
+  "version": "1.0",
+  "base_url": "http://localhost/api",
+  "endpoints": [
+    {
+      "name": "Get Kabinet Info",
+      "method": "GET",
+      "endpoint": "/kabinet-info",
+      "description": "Mengambil informasi kabinet (fungsi index di ProfileController, kemungkinan belum lengkap)",
+      "auth": false,
+      "response": {
+        "status": "success",
+        "data": {}
+      }
+    },
+    {
+      "name": "Get All Members",
+      "method": "GET",
+      "endpoint": "/members",
+      "description": "Mengambil semua data anggota BEM",
+      "auth": false,
+      "response": {
+        "status": "success",
+        "data": [
+          {
+            "id": "integer",
+            "name": "string",
+            "nim": "string",
+            "division": "string",
+            "created_at": "timestamp",
+            "updated_at": "timestamp"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Get Authenticated User",
+      "method": "GET",
+      "endpoint": "/user",
+      "description": "Mengambil data user yang sedang login",
+      "auth": true,
+      "headers": {
+        "Authorization": "Bearer {token}"
+      },
+      "response": {
+        "id": "integer",
+        "name": "string",
+        "email": "string"
+      }
+    }
+  ]
+}
